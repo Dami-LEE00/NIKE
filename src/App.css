@@ -13,13 +13,13 @@
   font-weight: 600;
 }
 .nav-bottom {
-  width: 100%;
-  height: 100px;
+  /* width: 100%; */
+  /* height: 100px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 60px;
+  padding: 12px 60px;
 }
 .menu {
   list-style: none;
@@ -28,7 +28,8 @@
   align-items: center;
   gap: 30px;
   overflow: hidden;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 .menu li a {
   text-decoration: none;
@@ -59,21 +60,33 @@
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 40px;
-
 }
 .card img {
   width: 100%;
-  margin-bottom: 10px;
   overflow: hidden;
+  cursor: pointer;
 }
-.card:hover img {
-  transform: scale(1.1);
-  transition: 0.35s;
+.card-wrapper {
+  position: relative;
+}
+.card-wrapper .card-wrap:hover::before {
+  content: '상세보기';
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
 }
 .card .card-new {
   color: #b94a00;
   font-size: 16px;
   font-weight: 600;
+  margin-top: 10px;
 }
 .card .card-title {
   color: #333;
@@ -91,7 +104,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 200px;
+  height: calc(100vh - 442px);
 }
 .login-form {
   display: flex;
@@ -171,7 +184,10 @@ ul {
   list-style: none;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 6px;
+  margin: 0;
+  padding: 0;
 }
 .footer-ul-left a {
   text-decoration: none;

@@ -1,10 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faAccusoft, faAribnb } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
-const NavBar = ({ authenticate, setAthenticate }) => {
+const NavBar = ({ authenticate, setAuthenticate }) => {
   const menuList = [
     'New Releases',
     'Men',
@@ -33,7 +32,7 @@ const NavBar = ({ authenticate, setAthenticate }) => {
         <span>가입하기</span>
         <span> | </span>
         {authenticate ? (
-          <div onClick={() => setAthenticate(false)}>
+          <div onClick={() => setAuthenticate(false)}>
             <span style={{cursor: "pointer"}}>로그아웃</span>
           </div>
         ) : (
