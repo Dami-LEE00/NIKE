@@ -43,6 +43,13 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const handleCart = () => {
+    alert('장바구니에 추가되었습니다.');
+  }
+  const handleWishList = () => {
+    alert('위시리스트에 추가되었습니다.');
+  }
+
   const getProductDetail = async () => {
     let url = `http://localhost:3004/products/${id}`;
     let response = await fetch(url);
@@ -57,7 +64,7 @@ const ProductDetail = () => {
   if(loading || product == null) return <h1>Loading</h1>
   return (
     <Container className='product-detail-wrapper'>
-      <Row>
+      <Row className='product-detail-Row'>
         <Col className='product-detail-img'>
           <img src={product.img} />
         </Col>
@@ -76,10 +83,17 @@ const ProductDetail = () => {
               ))}
             </Dropdown.Menu>
           </Dropdown>
-          <Button variant='dark' className='add-cart'>장바구니</Button>
-          <Button variant='white' className='add-list'>위시리스트</Button>
+          {/* <select>
+            <option selected disabled>사이즈 선택</option>
+            {product.size.map((item) => (
+              <option>{item}</option>
+            ))}
+          </select> */}
+
+          <Button variant='dark' className='add-cart' onClick={handleCart}>장바구니</Button>
+          <Button variant='white' className='add-list' onClick={handleWishList}>위시리스트</Button>
           <div className='desc'>
-          클래식하고 신기 편한 나이키 에어 포스 1 PLT.AF.ORM을 신고 근사한 스타일로 비상해 보세요. 높아진 우아한 형태의 중창이 농구 프랜차이즈에 당당하고 새로운 목소리를 전달합니다. 쉽게 길들여지는 가죽 갑피가 시간이 지날수록 완벽하게 완성되며, 성형된 카라와 폭신한 뒤꿈치가 한결같은 편안함을 선사합니다. 보는 이의 마음을 사로잡아 보세요.
+            클래식하고 신기 편한 나이키 에어 포스 1 PLT.AF.ORM을 신고 근사한 스타일로 비상해 보세요. 높아진 우아한 형태의 중창이 농구 프랜차이즈에 당당하고 새로운 목소리를 전달합니다. 쉽게 길들여지는 가죽 갑피가 시간이 지날수록 완벽하게 완성되며, 성형된 카라와 폭신한 뒤꿈치가 한결같은 편안함을 선사합니다. 보는 이의 마음을 사로잡아 보세요.
           </div>
           <ul>
             <li>현재 컬러: 화이트/화이트/화이트/서밋 화이트</li>

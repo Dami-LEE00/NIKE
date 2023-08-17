@@ -6,19 +6,21 @@ const Container = styled.div`
   flex-direction: column;
   justicy-content: center;
   align-items: center;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 const Title = styled.h1`
   font-size: 48px;
-  font-weight: 900;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 20px;
 `;
 const Desc = styled.div`
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 400;
   margin-bottom: 5px;
 `;
 const Button = styled.button`
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 400;
   background-color: #000;
@@ -28,6 +30,8 @@ const Button = styled.button`
 
   margin: 20px 0 80px 0;
   padding: 8px 20px;
+
+  transition: 0.2s;
   &:hover {
     background-color: #555;
   }

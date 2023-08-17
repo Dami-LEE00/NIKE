@@ -11,7 +11,6 @@ const NavBar = ({ authenticate, setAuthenticate }) => {
     'Kids',
     'Sale',
     'SNKRS',
-    '나이키 앱',
   ];
   const navigate = useNavigate();
 
